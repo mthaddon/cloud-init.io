@@ -9,19 +9,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14
-          registry-url: https://npm.pkg.github.com/
-          scope: "@mthaddon"
-
+          node-version: '14.x'
+          registry-url: 'https://npm.pkg.github.com/'
       - name: Install dependencies
         run: yarn install --immutable
-
       - name: Build
         run: yarn build
-
       - name: Publish
         run: yarn publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
