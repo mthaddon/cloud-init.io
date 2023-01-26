@@ -1,5 +1,5 @@
 {
-  "name": "@mthaddon/cloud-init-io",
+  "name": "mthaddon-cloud-init-io",
   "version": "1.0.0",
   "description": "The website for cloud-init.io",
   "scripts": {
