@@ -1,0 +1,18 @@
+pipeline:
+  - build
+
+jobs:
+  build:
+    series: jammy
+    architectures: amd64
+    snaps:
+      - dotrun
+    run: |
+      rm -rf ${HOME}/yarn-build || true
+      mkdir -p ${HOME}/yarn-build
+      cp -a . ${HOME}/yarn-build
+      dotrun exec yarn --cwd=$HOME/yarn-build install
+      dotrun exec yarn --cwd=${HOME}/yarn-build build
+      tar -zcf site.tgz -C ${HOME}/yarn-build/ _site
+    output:
+      paths: [site.tgz]

@@ -1,4 +1,7 @@
 {
+  "name": "@mthaddon/cloud-init-io",
+  "version": "1.0.0",
+  "description": "The website for cloud-init.io",
   "scripts": {
     "build": "yarn run build-css && yarn run build-js && yarn run build-site",
     "build-site": "eleventy --formats=html,scss,css,js,ico --input=src --output=_site",
